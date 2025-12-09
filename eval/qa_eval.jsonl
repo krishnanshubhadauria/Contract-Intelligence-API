@@ -1,0 +1,5 @@
+{"id": "q1", "question": "What is the governing law?", "expected_substring": "govern", "doc_hint": "governing law clause"}
+{"id": "q2", "question": "What is the payment term?", "expected_substring": "payment", "doc_hint": "payment terms clause"}
+{"id": "q3", "question": "Does the agreement auto-renew?", "expected_substring": "renew", "doc_hint": "renewal clause"}
+{"id": "q4", "question": "What is the termination notice period?", "expected_substring": "day", "doc_hint": "termination clause"}
+
