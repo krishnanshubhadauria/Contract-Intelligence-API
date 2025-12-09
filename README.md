@@ -58,10 +58,10 @@ A production-ready AI-powered contract analysis and intelligence system built wi
    ```
 
 4. **Access the API**:
-   - API: http://localhost:8000
-   - Swagger UI: http://localhost:8000/docs
-   - Health Check: http://localhost:8000/healthz
-    - Metrics: http://localhost:8000/metrics
+   - API: http://localhost:8080
+   - Swagger UI: http://localhost:8080/docs
+   - Health Check: http://localhost:8080/healthz
+    - Metrics: http://localhost:8080/metrics
 
 ### Local Development
 
@@ -123,7 +123,7 @@ wget -O sample_nda.pdf <url_to_pdf>
 ### 1. Ingest Documents
 
 ```bash
-curl -X POST "http://localhost:8000/ingest" \
+curl -X POST "http://localhost:8080/ingest" \
   -F "files=@contract1.pdf" \
   -F "files=@contract2.pdf"
 ```
@@ -139,7 +139,7 @@ Response:
 ### 2. Extract Fields
 
 ```bash
-curl -X POST "http://localhost:8000/extract" \
+curl -X POST "http://localhost:8080/extract" \
   -H "Content-Type: application/json" \
   -d '{"document_id": "uuid1"}'
 ```
@@ -147,7 +147,7 @@ curl -X POST "http://localhost:8000/extract" \
 ### 3. Ask Questions
 
 ```bash
-curl -X POST "http://localhost:8000/ask" \
+curl -X POST "http://localhost:8080/ask" \
   -H "Content-Type: application/json" \
   -d '{
     "question": "What is the termination clause?",
@@ -158,7 +158,7 @@ curl -X POST "http://localhost:8000/ask" \
 ### 4. Audit Contract
 
 ```bash
-curl -X POST "http://localhost:8000/audit" \
+curl -X POST "http://localhost:8080/audit" \
   -H "Content-Type: application/json" \
   -d '{"document_id": "uuid1"}'
 ```
@@ -166,7 +166,7 @@ curl -X POST "http://localhost:8000/audit" \
 ### 5. Stream Answers
 
 ```bash
-curl "http://localhost:8000/ask/stream?question=What%20are%20the%20payment%20terms?"
+curl "http://localhost:8080/ask/stream?question=What%20are%20the%20payment%20terms?"
 ```
 
 ## Architecture
@@ -221,7 +221,7 @@ Environment variables:
 
 ## Testing
 
-Test the API using the Swagger UI at http://localhost:8000/docs or use curl/Postman.
+Test the API using the Swagger UI at http://localhost:8080/docs or use curl/Postman.
 Run minimal automated tests:
 ```bash
 pytest -q
