@@ -1,0 +1,18 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: contractintelligence-api
+    ports:
+      - "8080:8000"
+    volumes:
+      - ./uploads:/app/uploads
+      - ./data:/app/data
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - WEBHOOK_URL=${WEBHOOK_URL:-}
+    env_file:
+      - .env
+    restart: unless-stopped
+
